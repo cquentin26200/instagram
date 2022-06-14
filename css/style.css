@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: black;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    height: 100vh;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+#app {
+    padding: 2rem;
+}
+
+.global {
+    width: 550px;
+    height: 700px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px 0px #000000;
+    margin: 0 auto;
+}
+
+.global+.global {
+    margin-top: 2rem;
+}
+
+.header {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header img, .footer img {
+    width: 30px;
+    height: 30px;
+}
+
+.header, .footer {
+    height: 15%;
+    width: 100%;
+}
+
+.globalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main {
+    height: 70%;
+}
+
+.main img {
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+}
+
+.footer nav, .footer ul {
+    display: flex;
+    width: 100%;
+}
+
+.footer nav {
+    padding: 2rem;
+}
+
+.footer ul {
+    margin: 0;
+}
+
+.footer li+li {
+    margin-left: 1rem;
+}
+
+.block {
+    display: block;
+}
+
+.groupPseudo {
+    display: flex;
+    align-items: center;
+}
+
+.groupPseudo img {
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    margin-right: 1rem;
+}
