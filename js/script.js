@@ -1,3 +1,13 @@
+const dataPost = {
+  isBooked: true,
+  pseudo: "",
+  isSponsored: false,
+  avatarUrl: "url",
+  imageUrl: "url",
+  isLiked: true,
+  likes: 300,
+};
+
 const app = document.querySelector("#app");
 
 for (let i = 0; i < 10; i++) {
@@ -87,10 +97,19 @@ for (let i = 0; i < 10; i++) {
   globalAll.forEach((e) => {
     e.children[2].children[0].children[0].children[0].children[0].children[0].src =
       "/img/heart.png";
+    e.children[2].children[0].children[0].children[0].children[0].children[0].classList.add(
+      "heart"
+    );
     e.children[2].children[0].children[0].children[1].children[0].children[0].src =
       "/img/messenger.png";
+    e.children[2].children[0].children[0].children[1].children[0].children[0].classList.add(
+      "messenger"
+    );
     e.children[2].children[0].children[0].children[2].children[0].children[0].src =
       "/img/send.png";
+    e.children[2].children[0].children[0].children[2].children[0].children[0].classList.add(
+      "send"
+    );
   });
 
   const save = document.createElement("a");
@@ -108,3 +127,16 @@ for (let i = 0; i < 10; i++) {
 
   footer.appendChild(numberLike);
 }
+
+const heart = document.querySelectorAll(".heart");
+
+heart.forEach((e) => {
+  e.addEventListener("click", () => {
+    console.log(e.src);
+    if (e.src = "/img/heart.png") {
+      e.src = "/img/pink-heart.png";
+    } else {
+      e.src = "/img/heart.png";
+    }
+  });
+});
