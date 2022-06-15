@@ -79,6 +79,7 @@ img {
 .footer {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .footer nav, .footer ul {
@@ -98,6 +99,14 @@ img {
     margin-left: 1rem;
 }
 
+.footer > p {
+    margin: 0;
+    width: 100%;
+    padding-left: 2rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
 .block {
     display: block;
 }
@@ -105,6 +114,10 @@ img {
 .groupPseudo {
     display: flex;
     align-items: center;
+}
+
+.groupPseudo a {
+    color: black;
 }
 
 .groupPseudo img {

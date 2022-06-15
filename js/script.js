@@ -1,17 +1,50 @@
+const allPseudo = ["John", "Emma", "Luna", "Tomy", "Mathieu", "Polo"];
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
 const dataPost = {
   isBooked: true,
-  pseudo: "",
+  pseudo: allPseudo[randomNumber(0, allPseudo.length)],
   isSponsored: false,
-  avatarUrl: "url",
+  avatarUrl: "https://picsum.photos/200/300?random=1",
   imageUrl: "url",
   isLiked: true,
-  likes: 300,
+  likes: randomNumber(0, 100000),
 };
+
+const dataPostTwo = {
+  isBooked: true,
+  pseudo: allPseudo[randomNumber(0, allPseudo.length)],
+  isSponsored: false,
+  avatarUrl: "https://picsum.photos/200/300?random=1",
+  imageUrl: "url",
+  isLiked: true,
+  likes: randomNumber(0, 100000),
+};
+
+const heart = document.querySelectorAll(".heart");
 
 const app = document.querySelector("#app");
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 3; i++) {
+  const globalAll = document.querySelectorAll(".global");
   const global = document.createElement("div");
+  if (globalAll.length % 2 === 0) {
+    console.log(global)
+    const imgOne = document.querySelectorAll(".imgOne");
+    global.classList.add("imgOne");
+    console.log(globalAll[1])
+    /*imgOne.forEach((e) => {
+      dataPost.isLiked === true
+        ? (e.children[2].children[0].children[0].children[0].children[0].children[0].src =
+            "img/pink-heart.png")
+        : (e.children[2].children[0].children[0].children[0].children[0].children[0].src =
+            "img/heart.png");
+    });*/
+  }
+
   global.classList.add("global");
 
   app.appendChild(global);
@@ -31,13 +64,13 @@ for (let i = 0; i < 10; i++) {
 
   const avatar = document.createElement("img");
   avatar.alt = "";
-  avatar.src = "https://via.placeholder.com/150";
+  avatar.src = dataPost.avatarUrl;
 
   groupHeaderPseudo.appendChild(avatar);
 
   const pseudo = document.createElement("a");
   pseudo.href = "#";
-  pseudo.innerHTML = "PSEUDO";
+  pseudo.innerHTML = dataPost.pseudo;
 
   groupHeaderPseudo.appendChild(pseudo);
   const sponsor = document.createElement("span");
@@ -92,11 +125,7 @@ for (let i = 0; i < 10; i++) {
     linkListFooter.appendChild(imgLinkFooter);
   }
 
-  const globalAll = document.querySelectorAll(".global");
-
   globalAll.forEach((e) => {
-    e.children[2].children[0].children[0].children[0].children[0].children[0].src =
-      "/img/heart.png";
     e.children[2].children[0].children[0].children[0].children[0].children[0].classList.add(
       "heart"
     );
@@ -124,19 +153,7 @@ for (let i = 0; i < 10; i++) {
   save.appendChild(imgSave);
 
   const numberLike = document.createElement("p");
+  numberLike.innerHTML = dataPost.likes;
 
   footer.appendChild(numberLike);
 }
-
-const heart = document.querySelectorAll(".heart");
-
-heart.forEach((e) => {
-  e.addEventListener("click", () => {
-    console.log(e.src);
-    if (e.src = "/img/heart.png") {
-      e.src = "/img/pink-heart.png";
-    } else {
-      e.src = "/img/heart.png";
-    }
-  });
-});
